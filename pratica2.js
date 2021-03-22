@@ -31,11 +31,30 @@ do{
 
 altura *= altura;
 const imc = peso / altura;
+let resultado = `${nome}! você está`;
+let dica;
 
-if (imc1 < 17) {
-    console.log(+nome1+ ' Você está '+ ' é maior que o de '+nome+ ' ('+imc+')');    
-} else if (imc == imc1) {
-    console.log('O IMC de ' +nome1+ ' ('+imc1+')'+ ' é igual ao o de '+nome+ ' ('+imc+')');    
+if (imc < 17) {
+    resultado = `${resultado} muito abaixo do peso.`;
+    dica = 'Precisa se alimentar mais!!';
+} else if (imc >= 17 && imc < 18.5) {
+    resultado = `${resultado} abaixo do peso.`;        
+    dica = 'Precisa engoradar um pouquinho só!';
+} else if (imc >= 18.5 && imc < 25) {
+    resultado = `${resultado} com seu peso normal.`;
+    dica = 'Parabéns!! continue com os bons hábitos!';
+} else if (imc >= 25 && imc < 30) {
+    resultado = `${resultado} acima do peso`;
+    dica = 'Cuidado!! Regule sua dieta e começe a fazer exercícios!';
+} else if (imc >= 30 && imc < 35) {
+    resultado = `${resultado} com Obesidade 1`;
+    dica = 'Perigo!! Precisa urgentemente regular seus hábitos!';
+} else if (imc >= 35 && imc < 40) {
+    resultado = `${resultado} com Obesidade 2`;
+    dica = 'Perigo!!, é melhor procurar um médico!';
 } else {
-    console.log('O IMC de ' +nome+ ' ('+imc+')'+ ' é maior que o de '+nome1+ ' ('+imc1+')');        
+    resultado = `${resultado} com Obesidade 3`;
+    dica = 'Perigo!! Precisa urgentemente regular seus hábitos, é melhor procurar um médico!';
 }
+
+console.log(`${resultado} DICA:[${dica}]`)
